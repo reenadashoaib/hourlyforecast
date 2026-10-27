@@ -160,6 +160,16 @@ button, input { font: inherit; color: inherit; }
   #locate { padding: 0 11px; }
 }
 
+.nav-link {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 6px;
+  color: var(--ink); font-weight: 700; text-decoration: none;
+}
+.nav-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.header-inner--simple { grid-template-columns: 1fr auto; }
+@media (max-width: 600px) {
+  .header-tools .nav-link { display: none; }
+}
+
 /* ---------- ads ---------- */
 .ad { display: flex; flex-direction: column; align-items: center; gap: 4px; }
 .ad-label { font-size: .75rem; color: var(--ink-soft); }
@@ -360,6 +370,12 @@ body.is-loading .outlook, body.is-loading .now-row, body.is-loading .strip, body
 .prose h1 { font-size: clamp(2rem, 1.4rem + 2.4vw, 3rem); font-weight: 800; letter-spacing: -.02em; margin: 8px 0 16px; }
 .prose h2 { font-size: 1.35rem; margin: 32px 0 8px; }
 .prose p, .prose ul { margin: 0 0 12px; }
+.prose li + li { margin-top: 6px; }
+.lede { font-size: 1.2rem; }
+.prose .legend { display: grid; gap: 10px; margin: 12px 0 16px; padding: 0; list-style: none; }
+.prose .legend li { display: flex; align-items: center; gap: 12px; margin: 0; }
+.swatch { width: 28px; height: 20px; border-radius: 4px; border: 1px solid var(--line); flex: none; }
+.swatch--line { background: linear-gradient(90deg, transparent 12px, var(--sun) 12px 15px, transparent 15px); border-color: transparent; }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }

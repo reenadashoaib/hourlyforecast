@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Hourly Forecast</title>
+  <meta name="description" content="What Hourly Forecast shows, how to read the hour-by-hour forecast, and where the weather data comes from.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230F2A44'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23F2B33D'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner header-inner--simple">
+      <a class="brand" href="/">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="var(--ink)"/><circle cx="16" cy="16" r="6" fill="var(--sun)"/></svg>
+        Hourly Forecast
+      </a>
+      <a class="nav-link" href="/">Forecast</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="prose">
+      <h1>About Hourly Forecast</h1>
+      <p class="lede">Hourly Forecast answers the questions you have before heading out: will it rain, when, and how warm will it be? It shows the weather hour by hour for the next 48 hours, for any city in the world.</p>
+
+      <h2>What you'll find on the forecast page</h2>
+      <ul>
+        <li><strong>The outlook.</strong> One sentence at the top tells you when rain or snow is likely in the next 24 hours, or that it should stay dry.</li>
+        <li><strong>The next 48 hours.</strong> A strip you can scroll sideways, with the temperature line, the chance of rain or snow, and where sunset and sunrise fall.</li>
+        <li><strong>Hour by hour.</strong> A table with temperature, feels-like temperature, chance of rain or snow, wind, humidity and UV index for each hour.</li>
+        <li><strong>Next 7 days.</strong> Each day's low and high, shown against the whole week's range so warm and cold days stand out.</li>
+      </ul>
+
+      <h2>How to read the 48-hour strip</h2>
+      <p>Each column is one hour, tinted by what the sky is doing:</p>
+      <ul class="legend">
+        <li><span class="swatch" style="background:var(--sky-clear)"></span>Clear or mostly clear daytime sky</li>
+        <li><span class="swatch" style="background:var(--sky-grey)"></span>Cloud or fog</li>
+        <li><span class="swatch" style="background:var(--sky-wet)"></span>Rain, drizzle or thunderstorms</li>
+        <li><span class="swatch" style="background:var(--sky-night)"></span>Night-time hours</li>
+        <li><span class="swatch swatch--line"></span>Sunrise or sunset</li>
+      </ul>
+      <p>The orange line traces the temperature. The blue bars along the bottom show the chance of rain or snow in that hour: the taller the bar, the more likely it is.</p>
+
+      <h2>Where the data comes from</h2>
+      <p>Forecasts come from <a href="https://open-meteo.com/" rel="noopener">Open-Meteo</a>, which combines weather models from national weather services. They update every hour, and the page fetches the latest forecast each time you open it or choose a new place.</p>
+      <p>Forecasts are estimates and can change, especially for showers and thunderstorms more than a day ahead. For severe weather warnings, follow your national weather service.</p>
+
+      <h2>Your location and settings</h2>
+      <p>"Use my location" only runs when you choose it, and your browser asks for permission first. The site remembers your last place and your choice of °C or °F on your own device. The <a href="privacy.html">privacy policy</a> explains this and how ads on the site work.</p>
+
+      <h2>Why there are ads</h2>
+      <p>Hourly Forecast is free to use. Ads pay for the weather data and hosting, and every ad is labelled "Advertisement" so it's clear what is forecast and what isn't.</p>
+
+      <h2>Contact</h2>
+      <p>Found a problem with the site, or interested in advertising? Email <a href="mailto:hello@example.com">hello@example.com</a>.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="muted">Hourly Forecast</p>
+      <ul class="footer-links">
+        <li><a href="/">Forecast</a></li>
+        <li><a href="privacy.html">Privacy policy</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
