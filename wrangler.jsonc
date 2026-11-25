@@ -7,6 +7,7 @@
     "not_found_handling": "404-page"
   },
   "routes": [
-    { "pattern": "hourlyforecast.live", "custom_domain": true }
+    { "pattern": "hourlyforecast.live", "custom_domain": true },
+    { "pattern": "www.hourlyforecast.live", "custom_domain": true }
   ]
 }
