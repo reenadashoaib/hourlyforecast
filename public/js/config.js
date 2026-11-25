@@ -14,10 +14,11 @@ window.SITE_CONFIG = {
       tile2: '',
       tile3: '',
       inTable: '',        // 728 x 90, responsive, inside the hourly table
+      inArticle: '',      // 728 x 90, responsive, inside each weather guide
       tile4: '',          // 300 x 250 tiles under the 7-day outlook
       tile5: '',
       tile6: '',
-      footerBanner: ''    // 728 x 90, responsive, above the footer
+      footerBanner: ''    // 728 x 90, responsive, above the footer and at the end of guides
     }
   },
 
@@ -37,8 +38,10 @@ window.SITE_CONFIG = {
     }
   },
 
-  video: { enabled: true, delaySeconds: 4 },
-  popup: { enabled: true, delaySeconds: 12, oncePerSession: true },
+  // Off while the site is reviewed by AdSense: Google doesn't allow pop-ups that
+  // get in the way of using a site. Use AdSense vignette ads for full-screen ads.
+  video: { enabled: false, delaySeconds: 4 },
+  popup: { enabled: false, delaySeconds: 12, oncePerSession: true },
 
   weather: {
     // Open-Meteo's free endpoints are for non-commercial use. For an ad-funded

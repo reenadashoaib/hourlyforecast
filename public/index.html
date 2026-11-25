@@ -21,10 +21,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://api.open-meteo.com" crossorigin>
-  <link rel="stylesheet" href="css/styles.css?v=20261125">
-  <script src="js/config.js?v=20261125" defer></script>
-  <script src="js/ads.js?v=20261125" defer></script>
-  <script src="js/weather.js?v=20261125" defer></script>
+  <link rel="stylesheet" href="css/styles.css?v=20261126">
+  <script src="js/config.js?v=20261126" defer></script>
+  <script src="js/ads.js?v=20261126" defer></script>
+  <script src="js/weather.js?v=20261126" defer></script>
 </head>
 <body>
   <!-- Weather icons, referenced with <use href="#i-..."> -->
@@ -63,7 +63,8 @@
         <ul id="place-results" class="search-results" role="listbox" aria-label="Matching places" hidden></ul>
       </form>
       <div class="header-tools">
-        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="/guides/">Guides</a>
+        <a class="nav-link" href="/about">About</a>
         <button class="btn-quiet" id="locate" type="button">
           <svg class="icon" aria-hidden="true"><use href="#i-locate"/></svg><span>Use my location</span>
         </button>
@@ -82,6 +83,7 @@
 
   <div class="container layout">
     <main id="main" class="content">
+      <noscript><p class="status">Hourly Forecast needs JavaScript to load the forecast. Turn it on in your browser settings, or read the <a href="/guides/">weather guides</a>.</p></noscript>
       <div class="status" id="status" role="alert" hidden>
         <p id="status-text"></p>
         <button type="button" class="btn-quiet" id="retry">Try again</button>
@@ -154,6 +156,21 @@
         <ul class="daily" id="daily-list"></ul>
       </section>
 
+      <section class="block" aria-labelledby="guides-title">
+        <div class="block-head">
+          <h2 id="guides-title">Understand your forecast</h2>
+          <a href="/guides/">All weather guides</a>
+        </div>
+        <ul class="guide-list guide-list--home">
+          <li><a href="/guides/how-to-read-an-hourly-forecast">How to read an hourly weather forecast</a><span class="muted">What each part of an hour-by-hour forecast means, and how far ahead to trust it.</span></li>
+          <li><a href="/guides/chance-of-rain-explained">What “chance of rain” really means</a><span class="muted">Why a 40% chance of rain isn't about time or area, and how to act on it.</span></li>
+          <li><a href="/guides/feels-like-temperature">Feels-like temperature explained</a><span class="muted">How wind, humidity and sun change how warm or cold it feels.</span></li>
+          <li><a href="/guides/uv-index-explained">UV index explained</a><span class="muted">What each UV level means, when it peaks, and how to protect yourself.</span></li>
+          <li><a href="/guides/wind-speed-and-direction">Wind speed and direction</a><span class="muted">Which way the wind blows, gusts versus steady wind, and what each speed feels like.</span></li>
+          <li><a href="/guides/humidity-and-dew-point">Humidity and dew point</a><span class="muted">Why some days feel sticky, and how fog forms.</span></li>
+        </ul>
+      </section>
+
       <div class="ad-tiles">
         <aside class="ad" aria-label="Advertisement"><span class="ad-label">Advertisement</span><div class="ad-slot" data-ad="tile4" data-size="300x250"></div></aside>
         <aside class="ad" aria-label="Advertisement"><span class="ad-label">Advertisement</span><div class="ad-slot" data-ad="tile5" data-size="300x250"></div></aside>
@@ -182,8 +199,11 @@
       </div>
       <nav aria-label="Footer">
         <ul class="footer-links">
-          <li><a href="about.html">About</a></li>
-          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="/guides/">Weather guides</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/terms">Terms of use</a></li>
           <li><a href="https://open-meteo.com/" rel="noopener">Weather data by Open-Meteo.com</a></li>
         </ul>
       </nav>

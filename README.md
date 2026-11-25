@@ -5,7 +5,9 @@ A static, ad-supported hourly weather website. Plain HTML, CSS and JavaScript wi
 ```
 public/
   index.html      the forecast page
-  privacy.html    privacy policy (required by AdSense)
+  guides/         weather guides (original content for AdSense review)
+  about.html, contact.html, privacy.html, terms.html
+  sitemap.xml     list of pages for search engines (update it when you add a page)
   404.html
   ads.txt         AdSense seller declaration
   robots.txt
@@ -20,10 +22,10 @@ wrangler.jsonc    Cloudflare deployment config
 ## Preview locally
 
 ```bash
-cd public && python3 -m http.server 8080
+npx wrangler dev
 ```
 
-Then open http://localhost:8080.
+Then open the address it prints. Wrangler serves pages the same way Cloudflare does, at clean addresses such as `/about` and `/guides/uv-index-explained`.
 
 ## Ad spaces
 
