@@ -74,7 +74,7 @@ wrangler login
 wrangler deploy
 ```
 
-`wrangler.jsonc` serves the `public/` folder. Then add your domain under the Worker's *Settings > Domains & Routes*.
+`wrangler.jsonc` serves the `public/` folder at https://hourlyforecast.live and https://www.hourlyforecast.live. The domain is registered at Namecheap with its nameservers pointed at Cloudflare (`cesar.ns.cloudflare.com`, `ziggy.ns.cloudflare.com`).
 
 Or with Cloudflare Pages: connect this GitHub repository, leave the build command empty, and set the build output directory to `public`.
 
