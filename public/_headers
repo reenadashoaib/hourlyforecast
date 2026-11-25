@@ -3,8 +3,10 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(self), camera=(), microphone=()
 
+# Browsers re-check styles and scripts on every visit (a quick "not modified"
+# when unchanged), so a new deploy shows up straight away.
 /css/*
-  Cache-Control: public, max-age=3600
+  Cache-Control: no-cache
 
 /js/*
-  Cache-Control: public, max-age=3600
+  Cache-Control: no-cache

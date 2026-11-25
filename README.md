@@ -49,7 +49,7 @@ On the live site, a slot with no ad unit ID (or the video and popup with no crea
 3. In AdSense, create a display ad unit for each slot in the table above and paste each unit's `data-ad-slot` number into `adsense.slots`.
 4. `public/ads.txt` already lists your publisher ID.
 5. Set up a consent message for visitors in the EEA, UK and Switzerland under AdSense > Privacy & messaging. Google requires a certified consent tool there.
-6. Replace `privacy@example.com` in `privacy.html` with a real contact address.
+6. The contact address on the About and Privacy pages is asad@pldash.com.
 
 ### The video and popup spaces
 
