@@ -197,6 +197,7 @@ button, input { font: inherit; color: inherit; }
   .layout { grid-template-columns: minmax(0, 1fr) 300px; }
   .rail { display: block; }
   .rail-sticky { position: sticky; top: 16px; }
+  .layout:has(> .rail[hidden]) { grid-template-columns: minmax(0, 1fr); }
 }
 
 .status {

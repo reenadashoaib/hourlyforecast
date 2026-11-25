@@ -4,7 +4,7 @@ window.SITE_CONFIG = {
   adsense: {
     // Your AdSense publisher ID, e.g. 'ca-pub-1234567890123456'.
     // While empty, every slot shows a labelled placeholder with its size.
-    client: '',
+    client: 'ca-pub-8884353000483064',
     // Ad unit IDs from AdSense > Ads > By ad unit (the data-ad-slot number).
     // A slot left empty keeps showing its placeholder.
     slots: {

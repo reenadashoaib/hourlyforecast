@@ -10,9 +10,25 @@
     set(key, value) { try { sessionStorage.setItem(key, value); } catch (e) { /* storage blocked */ } }
   };
 
+  // Empty slots show striped placeholders only while setting up: before a
+  // publisher ID is set, on a local copy, or with ?adpreview in the URL.
+  // On the live site an empty slot is hidden so the page never looks unfinished.
+  const preview = !adsense.client ||
+    /^(localhost|127\.0\.0\.1)$/.test(location.hostname) ||
+    new URLSearchParams(location.search).has('adpreview');
+
+  function hideEmpty(slot) {
+    // Hide the outermost wrapper so no empty column or table row is left behind.
+    (slot.closest('.rail') || slot.closest('.ad-row') || slot.closest('.ad')).hidden = true;
+    const group = slot.closest('.ad-tiles');
+    if (group && !group.querySelector('.ad:not([hidden])')) group.hidden = true;
+  }
+
   function loadAdsense() {
     if (adsenseRequested) return;
     adsenseRequested = true;
+    // The pages already include the AdSense script in <head>; don't load it twice.
+    if (document.querySelector('script[src*="adsbygoogle.js"]')) return;
     const s = document.createElement('script');
     s.async = true;
     s.crossOrigin = 'anonymous';
@@ -37,6 +53,12 @@
     if (slot.offsetParent === null) return;
     slot.dataset.rendered = 'true';
 
+    const unitId = (adsense.slots || {})[slot.dataset.ad];
+    if (!(adsense.client && unitId) && !preview) {
+      hideEmpty(slot);
+      return;
+    }
+
     const { w, h } = sizeOf(slot);
     const responsive = Boolean(slot.dataset.format);
     slot.style.maxWidth = w + 'px';
@@ -44,7 +66,6 @@
     slot.style.width = responsive ? '100%' : w + 'px';
     if (!responsive) slot.style.height = h + 'px';
 
-    const unitId = (adsense.slots || {})[slot.dataset.ad];
     if (adsense.client && unitId) {
       const ins = document.createElement('ins');
       ins.className = 'adsbygoogle';
@@ -76,6 +97,7 @@
     if (!box || opts.enabled === false || session.get('videoAdClosed')) return;
     const frame = box.querySelector('.video-ad__frame');
     const v = direct.video || {};
+    if (!v.src && !preview) return;
 
     if (v.src) {
       const video = document.createElement('video');
@@ -114,6 +136,7 @@
 
     const body = dialog.querySelector('.popup__creative');
     const p = direct.popup || {};
+    if (!p.image && !preview) return;
     if (p.image) {
       const img = document.createElement('img');
       img.src = p.image;

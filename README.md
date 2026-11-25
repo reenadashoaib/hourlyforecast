@@ -38,14 +38,16 @@ Then open http://localhost:8080.
 | Floating video | 16:9 | Bottom right, closable, appears after 4 s |
 | Full-screen popup | up to 800 × 600 | Once per session, after 12 s, closable |
 
-Until a slot has an ID or creative, it shows a striped placeholder with its size.
+The AdSense code for publisher `ca-pub-8884353000483064` is in the `<head>` of every page, and `ads.txt` declares the same ID.
+
+On the live site, a slot with no ad unit ID (or the video and popup with no creative) is hidden. To see every slot as a striped placeholder with its size, add `?adpreview` to the address, e.g. `https://hourlyforecast.live/?adpreview`, or run the site locally.
 
 ### Connecting AdSense
 
-1. Apply for AdSense with your live domain. To verify the site, uncomment the `google-adsense-account` meta tag in `index.html` and add your publisher ID.
-2. In `public/js/config.js`, set `adsense.client` to your publisher ID (`ca-pub-…`).
+1. Add https://hourlyforecast.live as a site in AdSense. The verification code is already on every page.
+2. `adsense.client` in `public/js/config.js` is already set to your publisher ID.
 3. In AdSense, create a display ad unit for each slot in the table above and paste each unit's `data-ad-slot` number into `adsense.slots`.
-4. Edit `public/ads.txt` and replace the commented line with your own publisher ID.
+4. `public/ads.txt` already lists your publisher ID.
 5. Set up a consent message for visitors in the EEA, UK and Switzerland under AdSense > Privacy & messaging. Google requires a certified consent tool there.
 6. Replace `privacy@example.com` in `privacy.html` with a real contact address.
 
